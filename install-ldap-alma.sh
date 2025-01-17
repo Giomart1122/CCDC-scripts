@@ -1,7 +1,8 @@
 #!/bin/bash
 #remember to add alma or default user to sudoers file first before preceding
 # Install necessary package with ldap-server
-sudo dnf install epel-release
+sudo dnf install epel-release -y
+sudo dnf install tmux -y
 # install LDAP packages on AlmaLinux
 # sudo dnf update -y (make sure u did this upon boot)
 sudo dnf install -y openldap openldap-servers openldap-clients
