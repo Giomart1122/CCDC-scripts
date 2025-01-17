@@ -1,0 +1,23 @@
+dn: dc=ccdctryout,dc=local
+objectClass: top
+objectClass: dcObject
+objectclass: organization
+o: My example Organisation
+dc: ccdctryout
+
+dn: cn=Manager,dc=ccdctryout,dc=local
+objectClass: organizationalRole
+cn: Manager
+description: OpenLDAP Manager
+
+dn: ou=Tech,dc=ccdctryout,dc=local
+objectClass: organizationalUnit
+ou: Tech
+
+dn: ou=Marketing,dc=ccdctryout,dc=local
+objectClass: organizationalUnit
+ou: Marketing
+
+dn: ou=Users,dc=ccdctryout,dc=local
+objectClass: organizationalUnit
+ou: Users
