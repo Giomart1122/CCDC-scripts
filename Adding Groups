@@ -1,0 +1,11 @@
+To create groups:
+
+1. Create and nano a .ldif file
+Format should be like this: 
+dn: ou=Group1,dc=example,dc=com
+objectClass: organizationalUnit
+ou: Group1
+
+dn: ou=Group2,dc=example,dc=com
+objectClass: organizationalUnit
+ou: Group2
