@@ -1,0 +1,13 @@
+dn: uid=jdoe,ou=People,dc=#domain,dc=#tld
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: #John Doe
+sn: #Doe
+uid: #jdoe
+uidNumber: 1001 #change user id
+gidNumber: 1001
+homeDirectory: /home/jdoe
+loginShell: /bin/bash
+mail: jdoe@example.com
+userPassword: {SSHA}hashedpassword
