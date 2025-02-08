@@ -19,5 +19,5 @@ do
     echo "" >> $OUTPUT
 done < <(tail -n +2 "$INPUT")  # Skip CSV header row
 
-#to add the ldif file to the config: ldapadd -x -D "cn=Manager,dc=computingforgeeks,dc=com" -W -f users.ldif
-#to verify users were added: ldapsearch -x -LLL -b "dc=computingforgeeks,dc=com" "(objectClass=inetOrgPerson)" cn uid
+#to add the ldif file to the config: ldapadd -x -D "cn=Manager,dc=<domain name>,dc=<tld>" -W -f users.ldif
+#to verify users were added: ldapsearch -x -LLL -b "dc=<domain name>,dc=<tld>" "(objectClass=inetOrgPerson)" cn uid
