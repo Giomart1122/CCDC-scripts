@@ -18,3 +18,6 @@ do
     echo "userPassword: $(slappasswd -s $userPassword)" >> $OUTPUT  # Encrypts password
     echo "" >> $OUTPUT
 done < <(tail -n +2 "$INPUT")  # Skip CSV header row
+
+#to add the ldif file to the config: ldapadd -x -D "cn=Manager,dc=computingforgeeks,dc=com" -W -f users.ldif
+#to verify users were added: ldapsearch -x -LLL -b "dc=computingforgeeks,dc=com" "(objectClass=inetOrgPerson)" cn uid
