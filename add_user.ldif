@@ -11,3 +11,8 @@ homeDirectory: /home/jdoe
 loginShell: /bin/bash
 mail: jdoe@example.com
 userPassword: {SSHA}hashedpassword
+
+
+
+#add the ldif file to the ldap config by typing:
+#ldapadd -x -D "cn=Manager,dc=ccdcldap,dc=local" -W -f add_user.ldif
