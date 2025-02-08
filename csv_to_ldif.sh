@@ -1,0 +1,20 @@
+#!/bin/bash
+
+INPUT="users.csv" #make sure to change the input!
+OUTPUT="users.ldif" #use this file to ldapadd
+BASE_DN="dc=ccdcldap,dc=local" #make sure to change the domain!
+
+echo "" > $OUTPUT  # Clear previous LDIF file
+
+while IFS=',' read -r cn uid sn givenName mail userPassword
+do
+    echo "dn: uid=$uid,ou=People,$BASE_DN" >> $OUTPUT
+    echo "objectClass: inetOrgPerson" >> $OUTPUT
+    echo "cn: $cn" >> $OUTPUT
+    echo "sn: $sn" >> $OUTPUT
+    echo "givenName: $givenName" >> $OUTPUT
+    echo "uid: $uid" >> $OUTPUT
+    echo "mail: $mail" >> $OUTPUT
+    echo "userPassword: $(slappasswd -s $userPassword)" >> $OUTPUT  # Encrypts password
+    echo "" >> $OUTPUT
+done < <(tail -n +2 "$INPUT")  # Skip CSV header row
