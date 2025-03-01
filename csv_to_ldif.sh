@@ -21,3 +21,7 @@ done < <(tail -n +2 "$INPUT")  # Skip CSV header row
 
 #to add the ldif file to the config: ldapadd -x -D "cn=Manager,dc=<domain name>,dc=<tld>" -W -f users.ldif
 #to verify users were added: ldapsearch -x -LLL -b "dc=<domain name>,dc=<tld>" "(objectClass=inetOrgPerson)" cn uid
+
+#Input file should look like this: 
+#cn,uid,sn,givenName,mail,userPassword
+#John Doe,jdoe,Doe,John,jdoe@example.com,securepass123
