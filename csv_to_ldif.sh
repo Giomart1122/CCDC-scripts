@@ -15,7 +15,9 @@ do
     echo "givenName: $givenName" >> $OUTPUT
     echo "uid: $uid" >> $OUTPUT
     echo "mail: $mail" >> $OUTPUT
-    echo "userPassword: $(slappasswd -s $userPassword)" >> $OUTPUT  # Encrypts password
+    hashed_password=$(slappasswd -s "$userPassword")
+    printf "userPassword: %s\n" "$hashed_password" >> $OUTPUT
+    #echo "userPassword: $(slappasswd -s $userPassword)" >> $OUTPUT  # Encrypts password
     echo "" >> $OUTPUT
 done < <(tail -n +2 "$INPUT")  # Skip CSV header row
 
