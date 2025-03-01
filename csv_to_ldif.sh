@@ -25,3 +25,13 @@ done < <(tail -n +2 "$INPUT")  # Skip CSV header row
 #Input file should look like this: 
 #cn,uid,sn,givenName,mail,userPassword
 #John Doe,jdoe,Doe,John,jdoe@example.com,securepass123
+
+#Should look like this stored: 
+#dn: uid=jdoe,ou=People,dc=ccdcldap,dc=local
+#objectClass: inetOrgPerson
+#cn: John Doe
+#sn: Doe
+#givenName: John
+#uid: jdoe
+#mail: jdoe@example.com
+#userPassword: {SSHA}RANDOMHASHEDPASSWORD
