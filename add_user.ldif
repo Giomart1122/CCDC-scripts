@@ -16,3 +16,5 @@ userPassword: {SSHA}hashedpassword
 
 #add the ldif file to the ldap config by typing:
 #ldapadd -x -D "cn=Manager,dc=ccdcldap,dc=local" -W -f add_user.ldif
+
+#dont forget to append slappasswd to the file. 
