@@ -18,3 +18,5 @@ userPassword: {SSHA}hashedpassword
 #ldapadd -x -D "cn=Manager,dc=ccdcldap,dc=local" -W -f add_user.ldif
 
 #dont forget to append slappasswd to the file. 
+
+#to verify users were added: ldapsearch -x -LLL -b "dc=<domain name>,dc=<tld>" "(objectClass=inetOrgPerson)" cn uid
